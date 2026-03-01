@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import { AiFillGithub, AiFillLinkedin, AiFillInstagram } from "react-icons/ai";
 import { BsFillMoonStarsFill, BsFillPatchCheckFill } from "react-icons/bs";
+<<<<<<< HEAD
 import SwiperCore, { Navigation } from "swiper";
 import "swiper/swiper-bundle.css";
 import deved from "../public/ozi.png";
@@ -76,6 +77,75 @@ export default function Home() {
       url: "https://grow.google/intl/id_id/bangkit/",
     },
   ];
+=======
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Autoplay } from "swiper";
+import "swiper/swiper-bundle.css";
+import deved from "../public/ozi.png";
+import ME from "../public/me.jpg";
+import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+SwiperCore.use([Navigation, Autoplay]);
+
+export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+  const swiperRef = useRef(null);
+
+  const portfolioData = [
+    {
+      image: "/porto1.png",
+      title: "KASIRQ",
+      desc: "Mengembangkan sistem kasir berbasis Website PHP (Software as a Service) untuk memudahkan manajemen penjualan toko obat tanaman dan pupuk",
+      view: "https://dashboard-kasir.vercel.app/",
+    },
+    {
+      image: "/porto2.png",
+      title: "Authbot",
+      desc: "Authbot Proyek ini menerapkan algoritma generate teks ke foto berbasis website PHP untuk menciptakan konten visual yang unik.",
+      view: "https://authbotzytes.000webhostapp.com/",
+    },
+    {
+      image: "/porto3.png",
+      title: "Culinarix",
+      desc: "Capstone Project in Bangkit 2023 Pembuatan Backend API aplikasi dan Mengkonfigurasikan Ke Google Cloud Platform ",
+      view: "https://github.com/keeptrain/Culinarix?tab=readme-ov-file",
+      demo: "https://www.youtube.com/watch?feature=shared&v=_1JeLwmAOOE",
+    },
+    {
+      image: "/porto4.png",
+      title: "Otogarage",
+      desc: "Website landing page untuk Jasa service kendaraan.",
+    },
+  ];
+
+  useEffect(() => {
+    const swiper = swiperRef.current?.swiper;
+    let intervalId;
+
+    const startInterval = () => {
+      intervalId = setInterval(() => {
+        if (swiper) {
+          swiper.slideNext();
+        }
+      }, 6000);
+    };
+
+    startInterval();
+
+    const reverseIntervalId = setInterval(() => {
+      if (swiper) {
+        swiper.slidePrev();
+      }
+    }, 9000);
+
+    return () => {
+      clearInterval(intervalId);
+      clearInterval(reverseIntervalId);
+    };
+  }, []);
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
 
   useEffect(() => {
     AOS.init({
@@ -107,7 +177,11 @@ export default function Home() {
                 <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className="cursor-pointer text-2xl" />
               </li>
               <li>
+<<<<<<< HEAD
                 <a className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8" href="https://drive.google.com/file/d/1T4Y2qRci9l4_oDT8FgZ12C4dlzpoRgwE/view?usp=sharing">
+=======
+                <a className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8" href="https://drive.google.com/file/d/1alVTlNg8F-0jYpyuPtKkh1FRKz5G_QMf/view?usp=drive_link">
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
                   Resume
                 </a>
               </li>
@@ -118,8 +192,13 @@ export default function Home() {
             <Image src={deved} layout="fill" objectFit="cover" />
           </div>
           <div className="text-center p-5 py-1" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+<<<<<<< HEAD
             <h2 className="text-2xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-4xl ">Shobarudin Alghozi</h2>
             <h3 className="text-lg py-3 dark:text-white md:text-3md">Fullstack Developer </h3>
+=======
+            <h2 className="text-2xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl ">Shobarudin</h2>
+            <h3 className="text-ls py-3 dark:text-white md:text-3md">Frontend Web Developer | Backend Web Developer</h3>
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
           </div>
           <div className="flex justify-center gap-10 py-3 text-gray-600 dark:text-gray-400" data-aos="fade-up">
             <a href="https://github.com/alghoziii" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-gray-800 transition-colors duration-300">
@@ -132,6 +211,7 @@ export default function Home() {
               <AiFillInstagram />
             </a>
           </div>
+<<<<<<< HEAD
 
         </section>
 
@@ -226,12 +306,55 @@ export default function Home() {
         <section id="experience">
           <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400 mt-16 text-center mb-11" data-aos="zoom-in">
             My Skills
+=======
+        </section>
+        <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400 mt-16 text-center" data-aos="fade-down">
+          About Me
+        </h3>
+        <section id="about-me" className="flex flex-col md:flex-row items-center justify-center py-12 bg-gray-100 rounded-lg shadow-md max-w-full h-auto dark:bg-gray-900 mt-3" data-aos="fade-up-left">
+          <div className="w-full md:w-1/2 lg:w-1/3 mx-4">
+            <Image src={ME} alt="me" className="rounded-lg shadow-md max-w-full h-auto" />
+          </div>
+
+          <div className="w-full md:w-2/3 mx-2 mt-4 md:mt-0">
+            <div className="text-center p-6">
+              <p className="text-md leading-1 text-gray-700 dark:text-white">
+                Currently, I am taking part in the Bangkit 2023 Learning Path Cloud Computing Program. I have experience in the fields of Frontend Development, Backend Development, and Cloud Computing. I am a person who enjoys learning new
+                things, especially about technology.
+              </p>
+              <a href="https://www.linkedin.com/in/shobarudin-alghozi-550163217/">
+                <button className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-6 rounded-xl mt-4 md:mt-5">Know Me More</button>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section id="experience">
+          <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400 mt-16 text-center mb-11" data-aos="zoom-in">
+            My Experience
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
           </h3>
           <div className="container experience__container dark:text-white" data-aos="zoom-in">
             <div className="experience__fontend">
               <h3>Frontend Development</h3>
               <div className="experience__content mt-6">
+<<<<<<< HEAD
 
+=======
+                <article className="experience__details">
+                  <BsFillPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>HTML</h4>
+                    <small className="text-light">Experienced</small>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsFillPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>CSS</h4>
+                    <small className="text-light">Experienced</small>
+                  </div>
+                </article>
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
                 <article className="experience__details">
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
@@ -242,13 +365,25 @@ export default function Home() {
                 <article className="experience__details">
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
+<<<<<<< HEAD
                     <h4>PHP</h4>
+=======
+                    <h4>Bootstrap</h4>
+                    <small className="text-light">Experienced</small>
+                  </div>
+                </article>
+                <article className="experience__details">
+                  <BsFillPatchCheckFill className="experience__details-icon" />
+                  <div>
+                    <h4>Tailwind</h4>
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
                     <small className="text-light">Intermediate</small>
                   </div>
                 </article>
                 <article className="experience__details">
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
+<<<<<<< HEAD
                     <h4>Vue Js</h4>
                     <small className="text-light">Intermediate</small>
                   </div>
@@ -257,6 +392,9 @@ export default function Home() {
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
                     <h4>Laravel</h4>
+=======
+                    <h4>React</h4>
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
                     <small className="text-light">Intermediate</small>
                   </div>
                 </article>
@@ -268,6 +406,7 @@ export default function Home() {
                 <article className="experience__details">
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
+<<<<<<< HEAD
                     <h4>Python</h4>
                     <small className="text-light">Intermediate</small>
                   </div>
@@ -275,6 +414,8 @@ export default function Home() {
                 <article className="experience__details">
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
+=======
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
                     <h4>Node JS</h4>
                     <small className="text-light">Intermediate</small>
                   </div>
@@ -282,20 +423,30 @@ export default function Home() {
                 <article className="experience__details">
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
+<<<<<<< HEAD
                     <h4>Flask</h4>
+=======
+                    <h4>MySQL</h4>
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
                     <small className="text-light">Intermediate</small>
                   </div>
                 </article>
                 <article className="experience__details">
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
+<<<<<<< HEAD
                     <h4>Golang</h4>
                     <small className="text-light">Pre-intermediate </small>
+=======
+                    <h4>Python</h4>
+                    <small className="text-light">Intermediate</small>
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
                   </div>
                 </article>
                 <article className="experience__details">
                   <BsFillPatchCheckFill className="experience__details-icon" />
                   <div>
+<<<<<<< HEAD
                     <h4>Google Cloud Computing</h4>
                     <small className="text-light">Intermediate </small>
                   </div>
@@ -305,12 +456,17 @@ export default function Home() {
                   <div>
                     <h4>Mysql & PostgreSql</h4>
                     <small className="text-light">Intermediate </small>
+=======
+                    <h4>Cloud Computing</h4>
+                    <small className="text-light">Intermediate</small>
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
                   </div>
                 </article>
               </div>
             </div>
           </div>
         </section>
+<<<<<<< HEAD
 
         <section className="py-12 bg-gray-100 dark:bg-gray-900">
           <div className="container mx-auto px-4">
@@ -359,6 +515,58 @@ export default function Home() {
               ))}
             </div>
           </div>
+=======
+        <section className="py-12" data-aos="zoom-in-left">
+          <div>
+            <h3 className="text-3xl py-1 text-teal-600 dark:text-teal-400 text-center mt-16">Portofolio</h3>
+          </div>
+          <Swiper ref={swiperRef} spaceBetween={30} slidesPerView={1} autoplay={{ delay: 4000 }}>
+            {portfolioData.map((item, index) => {
+              if (index % 2 === 0) {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="flex justify-between dark:bg-white mt-4 mb-5">
+                      {item && (
+                        <div className="flex-1 border border-gray-900 p-5 rounded-md mr-1">
+                          <img src={item.image} alt={item.title} className="w-full h-auto mb-4 mt-4 object-cover" style={{ maxHeight: "210px" }} />
+                          <h4 className="text-xl font-bold mt-11">{item.title}</h4>
+                          <p className="text-gray-600">{item.desc}</p>
+                          <div className="flex justify-center mt-12">
+                            {" "}
+                            <a href={item.demo} target="_blank" rel="noopener noreferrer" className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 mr-4">
+                              Demo
+                            </a>
+                            <a href={item.view} target="_blank" rel="noopener noreferrer" className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 mr-4">
+                              View
+                            </a>
+                          </div>
+                        </div>
+                      )}
+                      {index + 1 < portfolioData.length && (
+                        <div className="flex-1 border border-gray-900 p-6 rounded-md ml-4">
+                          <img src={portfolioData[index + 1].image} alt={portfolioData[index + 1].title} className="w-full h-auto mb-4 mt-4 object-cover" style={{ maxHeight: "210px" }} />
+                          <h4 className="text-xl font-bold mt-11">{portfolioData[index + 1].title}</h4>
+                          <p className="text-gray-600">{portfolioData[index + 1].desc}</p>
+                          <div className="flex justify-center mt-12">
+                            {" "}
+                            <a href={portfolioData[index + 1].demo} target="_blank" rel="noopener noreferrer" className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 mr-4">
+                              Demo
+                            </a>
+                            <a href={portfolioData[index + 1].view} target="_blank" rel="noopener noreferrer" className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 mr-4">
+                              View
+                            </a>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </SwiperSlide>
+                );
+              } else {
+                return null;
+              }
+            })}
+          </Swiper>
+>>>>>>> a2a590534715cca30c50c9cc6af14f8f0624753e
         </section>
       </main>
     </div>
