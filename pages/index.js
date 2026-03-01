@@ -119,7 +119,7 @@ export default function Home() {
           </div>
           <div className="text-center p-5 py-1" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
             <h2 className="text-2xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-4xl ">Shobarudin Alghozi</h2>
-            <h3 className="text-ls py-3 dark:text-white md:text-3md">Backend Web Developer</h3>
+            <h3 className="text-lg py-3 dark:text-white md:text-3md">Fullstack Developer </h3>
           </div>
           <div className="flex justify-center gap-10 py-3 text-gray-600 dark:text-gray-400" data-aos="fade-up">
             <a href="https://github.com/alghoziii" target="_blank" rel="noopener noreferrer" className="text-4xl hover:text-gray-800 transition-colors duration-300">
