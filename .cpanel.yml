@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/alghynkp/public_html/
-    - /bin/cp -R dist/. $DEPLOYPATH
+    - /bin/cp -R out/. $DEPLOYPATH
