@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/alghynkp/public_html/
+    - /bin/cp -R * $DEPLOYPATH
